@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controller for authentication
 class AuthenticationController < ApplicationController
   before_action :authenticate_request, only: [:sign_out]
 
@@ -59,7 +60,7 @@ class AuthenticationController < ApplicationController
       email: user.email,
       firstName: user.firstName,
       lastName: user.lastName,
-      displayName: user.displayName
+      displayName: user.display_name
     }
   end
 

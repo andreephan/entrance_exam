@@ -52,6 +52,10 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'pry'
   gem 'rubocop', require: false
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'simplecov', require: false
 end
 
 group :development do

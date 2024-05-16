@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# User model
 class User < ApplicationRecord
   has_secure_password
 
@@ -10,7 +11,7 @@ class User < ApplicationRecord
 
   has_many :tokens, dependent: :destroy
 
-  def displayName
+  def display_name
     "#{firstName} #{lastName}"
   end
 end
