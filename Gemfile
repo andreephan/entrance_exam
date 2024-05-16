@@ -43,9 +43,11 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'jwt'
 
-gem 'grape-swagger'
+# gem 'grape-swagger'
 
 gem 'dotenv-rails'
+
+gem 'rswag'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

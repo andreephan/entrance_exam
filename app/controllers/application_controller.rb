@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Application controller
 class ApplicationController < ActionController::API
   rescue_from StandardError, with: :handle_internal_server_error
   # before_action :authenticate_request

@@ -1,0 +1,102 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/sign-up":
+    post:
+      summary: Creates a user
+      tags:
+      - Authentication
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '400':
+          description: invalid request
+        '500':
+          description: internal error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - firstName
+              - lastName
+              - password
+  "/sign-in":
+    post:
+      summary: Login
+      tags:
+      - Authentication
+      parameters: []
+      responses:
+        '200':
+          description: login successful
+        '400':
+          description: invalid request
+        '500':
+          description: internal error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                firstName:
+                  type: string
+              required:
+              - email
+              - firstName
+  "/sign-out":
+    post:
+      summary: Sign Out
+      tags:
+      - Authentication
+      responses:
+        '204':
+          description: logout successful
+        '500':
+          description: internal error
+  "/refresh-token":
+    post:
+      summary: Refresh token
+      tags:
+      - Authentication
+      parameters: []
+      responses:
+        '200':
+          description: refresh token successful
+        '404':
+          description: token not found
+        '500':
+          description: internal error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                refreshToken:
+                  type: string
+              required:
+              - refreshToken
+servers:
+- url: http://localhost:3000
+  variables:
+    defaultHost:
+      default: localhost:3000

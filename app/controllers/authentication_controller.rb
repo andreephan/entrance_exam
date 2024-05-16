@@ -7,7 +7,7 @@ class AuthenticationController < ApplicationController
   def sign_up
     user = User.new(user_params)
     if user.save
-      render json: user_response(user)
+      render json: user_response(user), status: :created
     else
       render_error(user.errors.full_messages, :bad_request)
     end
